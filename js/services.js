@@ -1,11 +1,7 @@
 'use strict';
 
-var overpassUrl = 'http://overpass-api.de/api/interpreter';
-var templateQuery = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"@@amenity@@\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>";
+var overpassUrl = 'http://api.openstreetmap.fr/oapi/interpreter';
 
-var bindPopup = function (feature, layer) {
-    layer.bindPopup(JSON.stringify(feature.properties));
-};
 /* Overpass services */
 angular.module('overpass', [ ])
     /* Overpass service*/
