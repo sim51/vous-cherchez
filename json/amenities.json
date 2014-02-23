@@ -26,7 +26,7 @@
     {
         "key":"pharmacy",
         "name_fr":"une pharmarcie",
-        "template": "{{amenity}}",
+        "template": "{{name}}",
         "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"pharmacy\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>"
     },
     {
