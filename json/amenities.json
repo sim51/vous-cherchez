@@ -1,34 +1,50 @@
 [
     {
         "key":"telephone",
-        "name_fr":"une cabine téléphonique"
+        "name_fr":"une cabine téléphonique",
+        "template": "{{amenity}}",
+        "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"telephone\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>"
     },
     {
         "key":"recycling",
-        "name_fr":"un container pour recycler"
+        "name_fr":"un container pour recycler",
+        "template": "{{amenity}}",
+        "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"recycling\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>"
     },
     {
         "key":"bar",
-        "name_fr":"un bar"
+        "name_fr":"un bar",
+        "template": "{{amenity}}",
+        "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"bar\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>"
     },
     {
         "key":"atm",
-        "name_fr":"un distributeur de billet"
+        "name_fr":"un distributeur de billet",
+        "template": "{{amenity}}",
+        "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"atm\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>"
     },
     {
         "key":"pharmacy",
-        "name_fr":"une pharmarcie"
+        "name_fr":"une pharmarcie",
+        "template": "{{amenity}}",
+        "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"pharmacy\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>"
     },
     {
         "key":"toilets",
-        "name_fr":"des toilettes publiques"
+        "name_fr":"des toilettes publiques",
+        "template": "{{amenity}}",
+        "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"ttoilets\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>"
     },
     {
         "key":"post_box",
-        "name_fr":"une boîte aux lettres"
+        "name_fr":"une boîte aux lettres",
+        "template": "{{amenity}}",
+        "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"post_box\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>"
     } ,
     {
         "key":"bicycle_rental",
-        "name_fr":"à louer un vélo"
+        "name_fr":"à louer un vélo",
+        "template": "{{amenity}}",
+        "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"bicycle_rental\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>"
     }
 ]

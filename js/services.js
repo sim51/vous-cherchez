@@ -1,20 +1,11 @@
 'use strict';
 
 var overpassUrl = 'http://overpass-api.de/api/interpreter';
-
 var templateQuery = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"@@amenity@@\"/><bbox-query s=\"@@SWlat@@\" w=\"@@SWlng@@\" n=\"@@NElat@@\" e=\"@@NElng@@\"/></query><print mode=\"body\"/></osm-script>";
 
-var style = function style(feature) {
-    return {
-        fillColor: '#BBBBBB',
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
-    };
-}
-
+var bindPopup = function (feature, layer) {
+    layer.bindPopup(JSON.stringify(feature.properties));
+};
 /* Overpass services */
 angular.module('overpass', [ ])
     /* Overpass service*/
@@ -22,8 +13,7 @@ angular.module('overpass', [ ])
         return {
             query:function(NElat, NElng, SWlat, SWlng, amenity ){
                 if(typeof amenity != 'undefined') {
-                    var post = templateQuery;
-                    post = post.replace("@@amenity@@", amenity);
+                    var post = amenity.query;
                     post = post.replace("@@SWlat@@", SWlat);
                     post = post.replace("@@SWlng@@", SWlng);
                     post = post.replace("@@NElat@@", NElat);
@@ -34,7 +24,17 @@ angular.module('overpass', [ ])
                             var geoNodes = response.data.elements.map(function(node) {
                                 return {type: "Feature", geometry: {type: "Point", coordinates: [ node.lon , node.lat ]}, properties: node.tags};
                             });
-                            var geoJson = { data: { type: "FeatureCollection", features: geoNodes }, resetStyleOnMouseout: true, style:style };
+                            var geoJson = {
+                                data:
+                                    {
+                                        type: "FeatureCollection",
+                                        features: geoNodes
+                                    },
+                                resetStyleOnMouseout: true,
+                                onEachFeature : function (feature, layer) {
+                                    layer.bindPopup(Mustache.render(amenity.template, feature.properties));
+                                }
+                            };
                             return geoJson;
                         } else {
                             $rootScope.error = "Error";

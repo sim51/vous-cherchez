@@ -6,19 +6,32 @@
  * @param $overpass
  * @constructor
  */
-function IndexCtrl($scope, $overpass, $routeParams, $location) {
+function IndexCtrl($rootScope, $scope, $overpass, $routeParams, $location) {
     var name = $routeParams.name || 'recycling';
 
     // default value for the map
-    $scope.defaults = { minZoom: 14, tileLayer: 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/85317/256/{z}/{x}/{y}.png'};
+    $scope.defaults = {
+        minZoom: 14,
+        tileLayer: 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/85317/256/{z}/{x}/{y}.png',
+        icon: {
+            url: './img/marker.png'
+        }
+    };
 
-    // Default location for map
-    $scope.bounds = { northEast: { lat: 47.2178, lng: -1.5496 }, southWest: { lat: 47.2178, lng:-1.5496 } };
+    if(typeof $rootScope.sessionBounds ==  'undefined') {
 
-    // get user location
-    navigator.geolocation.getCurrentPosition(function(position) {
-        $scope.bounds = { northEast: { lat: position.coords.latitude, lng:  position.coords.longitude }, southWest: { lat: position.coords.latitude, lng:  position.coords.longitude } };
-    });
+        // Default location for map
+        $scope.bounds = { northEast: { lat: 47.2178, lng: -1.5496 }, southWest: { lat: 47.2178, lng:-1.5496 } };
+
+        // get user location
+        navigator.geolocation.getCurrentPosition(function(position) {
+            $scope.bounds = { northEast: { lat: position.coords.latitude, lng:  position.coords.longitude }, southWest: { lat: position.coords.latitude, lng:  position.coords.longitude } };
+        });
+    }
+    else {
+        $scope.bounds = $rootScope.sessionBounds;
+    }
+
 
     // populate amenities select
     $overpass.amenities().then(function(datas){
@@ -29,12 +42,13 @@ function IndexCtrl($scope, $overpass, $routeParams, $location) {
 
         // watch change on bounds
         $scope.$watch('bounds', function(newValue, oldValue) {
+            $rootScope.sessionBounds = $scope.bounds;
             $overpass.query(
                     $scope.bounds.northEast.lat,
                     $scope.bounds.northEast.lng,
                     $scope.bounds.southWest.lat,
                     $scope.bounds.southWest.lng,
-                    $scope.amenity.key).then(function(datas){
+                    $scope.amenity).then(function(datas){
                     $scope.geojson = datas;
                 });
         });
