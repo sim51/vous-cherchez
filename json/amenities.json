@@ -46,5 +46,11 @@
         "name_fr":"à louer un vélo",
         "template": "{{amenity}}",
         "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"amenity\" v=\"bicycle_rental\"/><bbox-query s=\"{{ sw_lat }}\" w=\"{{ sw_lng }}\" n=\"{{ ne_lat }}\" e=\" {{ ne_lng }} \"/></query><print mode=\"body\"/></osm-script>"
+    } ,
+    {
+        "key":"wifi",
+        "name_fr":"un accès internet",
+        "template": "Type: {{internet_access}}",
+        "query": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm-script output=\"json\" timeout=\"25\"><query type=\"node\"><has-kv k=\"internet_access\"/><bbox-query s=\"{{ sw_lat }}\" w=\"{{ sw_lng }}\" n=\"{{ ne_lat }}\" e=\" {{ ne_lng }} \"/></query><print mode=\"body\"/></osm-script>"
     }
 ]
