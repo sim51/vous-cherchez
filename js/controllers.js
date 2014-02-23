@@ -6,10 +6,11 @@
  * @param $overpass
  * @constructor
  */
-function IndexCtrl($scope, $overpass) {
+function IndexCtrl($scope, $overpass, $routeParams, $location) {
+    var name = $routeParams.name || 'recycling';
 
     // default value for the map
-    $scope.defaults = { minZoom: 14};
+    $scope.defaults = { minZoom: 14, tileLayer: 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/85317/256/{z}/{x}/{y}.png'};
 
     // Default location for map
     $scope.bounds = { northEast: { lat: 47.2178, lng: -1.5496 }, southWest: { lat: 47.2178, lng:-1.5496 } };
@@ -24,30 +25,8 @@ function IndexCtrl($scope, $overpass) {
        $scope.amenities = datas;
 
         // default amenity map
-        $scope.amenity = $scope.amenities[0];
+        $scope.amenity = datas.filter(function(amenity){ return (amenity.key == name); })[0]
 
-        // query !
-        $overpass.query(
-                $scope.bounds.northEast.lat,
-                $scope.bounds.northEast.lng,
-                $scope.bounds.southWest.lat,
-                $scope.bounds.southWest.lng,
-                $scope.amenity.key).then(function(datas){
-                $scope.geojson = datas;
-            });
-
-        // watch change on amenity
-        $scope.$watch('amenity', function(newValue, oldValue) {
-            // query !
-            $overpass.query(
-                    $scope.bounds.northEast.lat,
-                    $scope.bounds.northEast.lng,
-                    $scope.bounds.southWest.lat,
-                    $scope.bounds.southWest.lng,
-                    $scope.amenity.key).then(function(datas){
-                    $scope.geojson = datas;
-                });
-        });
         // watch change on bounds
         $scope.$watch('bounds', function(newValue, oldValue) {
             $overpass.query(
@@ -58,6 +37,12 @@ function IndexCtrl($scope, $overpass) {
                     $scope.amenity.key).then(function(datas){
                     $scope.geojson = datas;
                 });
+        });
+
+        // watch change on amenity
+        $scope.$watch('amenity', function(newValue, oldValue) {
+            if(newValue.key != oldValue.key)
+                $location.url('/' + newValue.key);
         });
 
     });

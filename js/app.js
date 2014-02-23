@@ -5,7 +5,7 @@ var app = angular.module('odd2014', ['ngRoute', 'overpass', 'leaflet-directive',
 
 app.config(function($routeProvider) {
     $routeProvider
-        .when('/', {templateUrl: 'partials/map.html', controller: IndexCtrl})
+        .when('/:name', {templateUrl: 'partials/map.html', controller: IndexCtrl})
         .when('/error', {templateUrl: 'partials/error.html', controller: ErrorCtrl})
-        .otherwise({redirectTo: '/'});
+        .otherwise({redirectTo: '/recycling'});
 });
