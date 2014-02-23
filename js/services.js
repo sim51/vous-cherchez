@@ -13,12 +13,8 @@ angular.module('overpass', [ ])
         return {
             query:function(NElat, NElng, SWlat, SWlng, amenity ){
                 if(typeof amenity != 'undefined') {
-                    var post = amenity.query;
-                    post = post.replace("@@SWlat@@", SWlat);
-                    post = post.replace("@@SWlng@@", SWlng);
-                    post = post.replace("@@NElat@@", NElat);
-                    post = post.replace("@@NElng@@", NElng);
-                    return $http.post(overpassUrl, post).then(function (response){
+                    var query = Mustache.render(amenity.query, { "sw_lat": SWlat, "sw_lng": SWlng, "ne_lat": NElat, "ne_lng": NElng} )
+                    return $http.post(overpassUrl, query).then(function (response){
                         if( response.status == 200 ){
                             // transorfom JSON to GEOJSON
                             var geoNodes = response.data.elements.map(function(node) {
