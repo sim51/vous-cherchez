@@ -10,6 +10,13 @@ header {
     color : #FFFFFF;
     padding-left: 100px;
     padding-right: 15px;
+    width: 400px;
+    height: 70px;
+}
+h1{
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
 }
 .leaflet-left { left : 10px }
 .leaflet-top { top: 10px }
@@ -32,10 +39,10 @@ footer p {
 }
 
 #search {
-    width: 300px;
+    width: 400px;
     position: fixed;
-    top: 80px;
-    left: 0px;
+    top: 10px;
+    left: 400px;
     background-color: #3682b2;
     padding: 20px;
     opacity: 0.8;
@@ -51,7 +58,11 @@ footer p {
 }
 
 .clip-overflow { overflow: hidden; }
-.form-control { height: 30px; }
+.form-control {
+    font-size: 20px;
+    padding: 0px 12px;
+    height: 30px;
+}
 
 
 

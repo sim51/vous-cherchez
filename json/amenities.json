@@ -1,11 +1,11 @@
 [
     {
         "key":"telephone",
-        "name_fr":"Cabine téléphonique"
+        "name_fr":"une cabine téléphonique"
     },
     {
         "key":"recycling",
-        "name_fr":"Container pour recycler"
+        "name_fr":"un container pour recycler"
     },
     {
         "key":"bar",
@@ -13,22 +13,22 @@
     },
     {
         "key":"atm",
-        "name_fr":"Distributeur de billet"
+        "name_fr":"un distributeur de billet"
     },
     {
         "key":"pharmacy",
-        "name_fr":"Pharmarcie"
+        "name_fr":"une pharmarcie"
     },
     {
         "key":"toilets",
-        "name_fr":"Toilettes publiques"
+        "name_fr":"des toilettes publiques"
     },
     {
         "key":"post_box",
-        "name_fr":"Boîtes aux lettres"
+        "name_fr":"des boîtes aux lettres"
     } ,
     {
         "key":"bicycle_rental",
-        "name_fr":"Borne de location de velo"
+        "name_fr":"à lour un vélo"
     }
 ]
