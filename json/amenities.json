@@ -9,7 +9,7 @@
     },
     {
         "key":"bar",
-        "name_fr":"Bar"
+        "name_fr":"un bar"
     },
     {
         "key":"atm",
@@ -25,10 +25,10 @@
     },
     {
         "key":"post_box",
-        "name_fr":"des boîtes aux lettres"
+        "name_fr":"une boîte aux lettres"
     } ,
     {
         "key":"bicycle_rental",
-        "name_fr":"à lour un vélo"
+        "name_fr":"à louer un vélo"
     }
 ]
