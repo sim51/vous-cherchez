@@ -1,0 +1,57 @@
+html, body, .main { height: 100%; margin: 0; padding :0}
+.angular-leaflet-map { height: 100%; }
+
+header {
+    position: fixed;
+    top : 10px;
+    background-color: #ED6319;
+    opacity: 0.8;
+    z-index: 999;
+    color : #FFFFFF;
+    padding-left: 100px;
+    padding-right: 15px;
+}
+.leaflet-left { left : 10px }
+.leaflet-top { top: 10px }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 16px;
+    width: 100%;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    z-index: 999;
+    color : #000000;
+}
+footer p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+#search {
+    width: 300px;
+    position: fixed;
+    top: 80px;
+    left: 0px;
+    background-color: #3682b2;
+    padding: 20px;
+    opacity: 0.8;
+}
+
+.dropdown-input {
+    position:   absolute;
+    top:        100%;
+    left:       0;
+    z-index:    1000;
+    float:      left;
+    margin-top: 2px;
+}
+
+.clip-overflow { overflow: hidden; }
+.form-control { height: 30px; }
+
+
+

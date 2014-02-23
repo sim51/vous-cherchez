@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr" ng-app="odd2014">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Vous cherchez ?</title>
+
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css"/>
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css">
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular-route.js"></script>
+        <script src="./js/controllers.js"></script>
+        <script src="./js/services.js"></script>
+        <script src="./js/angular-leaflet-directive.js"></script>
+        <script src="./js/jmSelectSearchable.js"></script>
+        <script src="./js/app.js"></script>
+
+        <link rel="stylesheet" href="./css/main.css"/>
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Vous cherchez ?</h1>
+        </header>
+
+        <div class="main" ng-view>
+        </div>
+
+        <footer>
+            <p>&copy; <a href="http://www.bsimard.com">Benoît Simard</a> ( <a href="https://www.twitter.com/logisima">@logisima</a> )</p>
+        </footer>
+
+    </body>
+
+</html>

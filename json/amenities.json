@@ -1,0 +1,34 @@
+[
+    {
+        "key":"telephone",
+        "name_fr":"Cabine téléphonique"
+    },
+    {
+        "key":"recycling",
+        "name_fr":"Container pour recycler"
+    },
+    {
+        "key":"bar",
+        "name_fr":"Bar"
+    },
+    {
+        "key":"atm",
+        "name_fr":"Distributeur de billet"
+    },
+    {
+        "key":"pharmacy",
+        "name_fr":"Pharmarcie"
+    },
+    {
+        "key":"toilets",
+        "name_fr":"Toilettes publiques"
+    },
+    {
+        "key":"post_box",
+        "name_fr":"Boîtes aux lettres"
+    } ,
+    {
+        "key":"bicycle_rental",
+        "name_fr":"Borne de location de velo"
+    }
+]
