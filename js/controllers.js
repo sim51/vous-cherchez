@@ -12,7 +12,7 @@ function IndexCtrl($rootScope, $scope, $overpass, $routeParams, $location) {
     // default value for the map
     $scope.defaults = {
         minZoom: 14,
-        tileLayer: 'http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/85317/256/{z}/{x}/{y}.png',
+        tileLayer: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
         icon: {
             url: './img/marker.png'
         }
